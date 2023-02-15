@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Challenge</title>
+    </head>
+
+    <body>
+        <h1>Registration Form</h1>
+
+        <form action="info.php" method="post">
+
+            <label for="id">User ID:</label>    <!--required field-->
+                <input type="number" id="id" name="user_id" required
+                minlength="5" maxlength="12">
+            
+            <br>
+
+            <label for="password">Password:</label>     <!--required field-->
+                <input type="password" id="password" name="password" required
+                minlength="7" maxlength="12">  
+                
+            <br>
+
+            <label for="name">Name:</label>     <!--required field-->
+                <input type="text" id="name" name="user_name" required> <!--id must match label in for property | creates relationship between label and input element-->
+
+            <br>
+
+            <label for="address">Address:</label>   <!--optional field-->
+                <input type="text" id="address" name="address" optional>
+            
+            <br>
+
+            <label for="countries">Country:</label> <!--required field-->
+                <input list="countries" required>    <!--select element sets the information in the form to be a list of options they should choose from-->
+                <datalist id="countries">      <!--datalist element represents preset options available for user upon dropdown-->
+                    <option value="South Africa">
+                    <option value="Botswana">
+                    <option value="Namibia">
+                    <option value="Zimbabwe">
+                    <option value="Mozambique">
+                    <option value="UK">
+                    <option value="USA">
+                    <option value="Spain">
+                    <option value="Mexico">
+                    <option value="Canada">
+                </datalist>
+
+            <br>
+
+            <label for="zipcode">ZIP Code:</label>  <!--required field-->
+                <input type="number" id="zipcode" name="zipcode" required> <!--number type only allows user to enter numeric values | required information (form won't submit without it)-->
+
+            <br>
+
+            <label for="mail">Email:</label>    <!--required field-->
+                <input type="email" id="mail" name="user_mail" required> <!--email input type ensures that users submit information in a valid email format when submitting data in the form otherwise code won't run (submission not allowed)-->
+           
+            <br>
+
+            <label for="gender" required>Sex:</label>     <!--required field-->
+                    <input type="radio" name="gender" value="female"> Female  <!--required element ensures form cannot be submitted unless certain information has been given-->
+                    <input type="radio" name="gender" value="male"> Male    <!--radio type with different values ensures user can only pick one option at a time (such as with the gender choices)-->
+            <br>
+
+            <label for="language" required>Language</label>     <!--required field-->
+                <input type="checkbox" id="language" value="english">English    <!--checkboxes allow for multiple selection of options-->
+                <input type="checkbox" id="language" value="non-english">Non English    
+
+            <br>
+
+            <label for="about">About:</label>   <!--optional field-->
+            <textarea type="text"></textarea>
+
+            <br>
+
+            <input type="submit" value="Submit">    <!--submit button will submit form if all information is up to standard-->
+
+        </form>
+    </body>
+</html>
